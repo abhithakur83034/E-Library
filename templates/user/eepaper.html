@@ -1,0 +1,55 @@
+{% extends 'base.html'%}
+{% load static %}
+
+{% block content %}
+<style>
+    .a:hover{
+        background: #FFA900;
+        color: white;
+        transition: all ease 1s;
+    }
+</style>
+<div class="row" style="min-height:200px;">
+    <div class="h2 text-center py-4">Electronics<b class="text-danger">Engineering</b></div>
+    <div class="col-sm-1"></div>
+    <div class="col-sm-10">
+        <div class="row">
+            <div class="col-sm-3">
+<ul class="list-group">
+  <li class="list-group-item active" style="background: #FFA900;" aria-current="true">Previous Year Question Paper</li>
+ {% if cat %}
+    {% for x in cat %}
+ <a href="/library/eepaper?abc={{x.id}}" style="text-decoration: none;"><li class="list-group-item a">{{x.cname}}</li></a>
+    {% endfor %}
+    {% endif%}
+     <a href="/library/eepaper/" style="text-decoration: none;"><li class="list-group-item a">All Question Paper</li></a>
+
+</ul>
+            </div>
+            <div class="col-sm-9">
+                <div class="row">
+{% if paper %}
+    {% for x in paper %}
+    <div class="col-sm-4">
+        <div class="card w-100">
+            <img src="/{{x.ppic}}" class="card-img-top">
+            <div class="card-body">
+                <h5 class="card-title">{{x.name}}</h5>
+                <p class="fs-4">{{x.sem}}</p>
+                <h6 class="card-text">{{x.branch}}</h6>
+                <h6 class="card-text">{{x.year}} </h6>
+                <a href="{{x.pfile.url}}" download class="btn btn-outline-warning text-dark" >Download</a>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+    {% endif %}
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-1"></div>
+</div>
+{% endblock %}

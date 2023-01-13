@@ -1,0 +1,139 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %} Search Results {% endblock title %}
+{% block content %}
+<!--Front Page data start -->
+<div class="row books">
+    <div class="col-sm-1"></div>
+    <div class="col-sm-10">
+      <div class="row">
+          <h2>Search Results:</h2>
+        {% for x in f %}
+  
+        <div class="col-sm-2">
+          <div class="card">
+            <img src="/{{x.ppic}}" class="card-img-top"><br>
+            <div class="card-body">
+              <h5 class="card-title">{{x.name}}</h5>
+              <h6 class="card-text">{{x.branch}}</h6>
+              <h6 class="card-text">{{x.lan}}</h6>
+              <h6 class="card-text">{{x.pdate}} </h6>
+              <a href="{{x.pfile.url}}" download class="btn btn-outline-warning text-dark" >Download</a>
+            </div>
+          </div>
+        </div>
+  
+    {% endfor %}
+      <!--Front Page data end -->
+
+    <!--computer Science Books data start -->
+    {% for x in cs %}
+  
+    <div class="col-sm-2">
+      <div class="card">
+        <img src="/{{x.ppic}}" class="card-img-top"><br>
+        <div class="card-body">
+          <h5 class="card-title">{{x.name}}</h5>
+          <p class="fs-4">{{x.sem}}</p>
+          <h6 class="card-text">{{x.branch}}</h6>
+          <h6 class="card-text">{{x.lan}}</h6>
+          <h6 class="card-text">{{x.pdate}} </h6>
+          <a href="{{x.pfile.url}}" download class="btn btn-outline-warning text-dark" >Download</a>
+        </div>
+      </div>
+    </div>
+
+
+{% endfor %}
+
+<!--computer Science Books data end -->
+  
+
+<!--mechanical automobile Books data start -->
+      {% for x in ma %}
+  
+      <div class="col-sm-2">
+        <div class="card">
+          <img src="/{{x.ppic}}" class="card-img-top"><br>
+          <div class="card-body">
+            <h5 class="card-title">{{x.name}}</h5>
+            <p class="fs-4">{{x.sem}}</p>
+            <h6 class="card-text">{{x.branch}}</h6>
+            <h6 class="card-text">{{x.lan}}</h6>
+            <h6 class="card-text">{{x.pdate}} </h6>
+            <a href="{{x.pfile.url}}" download class="btn btn-outline-warning text-dark" >Download</a>
+          </div>
+        </div>
+      </div>
+  
+  
+  {% endfor %}
+  
+
+<!--mechanical automobile Books data end -->
+
+<!--mechanical Production Books data start -->
+      {% for x in mp %}
+  
+      <div class="col-sm-2">
+        <div class="card">
+          <img src="/{{x.ppic}}" class="card-img-top"><br>
+          <div class="card-body">
+            <h5 class="card-title">{{x.name}}</h5>
+            <p class="fs-4">{{x.sem}}</p>
+            <h6 class="card-text">{{x.branch}}</h6>
+            <h6 class="card-text">{{x.lan}}</h6>
+            <h6 class="card-text">{{x.pdate}} </h6>
+            <a href="{{x.pfile.url}}" download class="btn btn-outline-warning text-dark" >Download</a>
+          </div>
+        </div>
+      </div>
+  
+  
+  {% endfor %}
+  
+  <!--mechanical production Books data end -->
+
+<!--Electronics Engineering Books data start -->
+{% for x in ee %}
+  
+<div class="col-sm-2">
+  <div class="card">
+    <img src="/{{x.ppic}}" class="card-img-top"><br>
+    <div class="card-body">
+      <h5 class="card-title">{{x.name}}</h5>
+      <p class="fs-4">{{x.sem}}</p>
+      <h6 class="card-text">{{x.branch}}</h6>
+      <h6 class="card-text">{{x.lan}}</h6>
+      <h6 class="card-text">{{x.pdate}} </h6>
+      <a href="{{x.pfile.url}}" download class="btn btn-outline-warning text-dark" >Download</a>
+    </div>
+  </div>
+</div>
+
+
+{% endfor %}
+
+<!--Electronics Engineering Books data end -->
+
+<!--magazines Books data start -->
+{% for x in mag %}
+  
+<div class="col-sm-2">
+    <div class="card">
+        <img src="/{{x.mpic}}" class="card-img-top">
+        <div class="card-body">
+          <h5 class="card-title">{{x.name}}</h5>
+          <p class="card-text">{{x.mdate}}</p>
+          <a href="{{x.mfile.url}}" download class="btn btn-primary">Download</a>
+        </div>
+      </div>
+</div>
+
+
+{% endfor %}
+
+<!--magazines Engineering Books data end -->
+
+</div>
+{% endblock %}

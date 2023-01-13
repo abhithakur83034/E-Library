@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Our Library</title>
+    <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}">
+    <link rel="stylesheet" href="{% static 'css/font-awesome.css' %}">
+    <script src="{% static 'js/bootstrap.js' %}"></script>
+    <link rel="icon" href="{% static 'images/lib.png'%}">
+    <style>
+      .menu{
+      min-height: 60px;
+      /*background: #ec933a;*/
+      }
+      .header{
+        background: #E0E0E0;
+      }
+      .logo{
+        height: 50px;
+        width: 130px;
+      }
+      .ic{
+        margin-left: 15px;
+      }
+      .ic:hover
+    {
+    transition:all ease .5s;
+    transform:scale(1.5);
+    }
+    #menu ul li a{
+      color: black;
+    }
+    #menu ul li a:hover{
+      color: blue;
+      text-decoration: underline;
+      transition: all ease 1s;
+    }
+    .branch{
+      min-height: 200px;
+    }
+    .books{
+      min-height: 500px;
+    }
+    .ufooter{
+      min-height: 400px;
+    }
+    .bfooter{
+      min-height: 50px;
+      background: #131618;
+    }
+    
+    /*#p{
+      position: absolute;
+      top: 120px;
+      left: 450px;
+      font-size: 35px;
+      font-weight: bolder;
+      font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+      background: #FFFF00;
+    }*/
+    </style>
+</head>
+<body>
+    <div class="container-fluid">
+        <!--Start header -->
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="row header text-center">
+                    <div class="col-sm-1"></div>
+                    <div class="col-sm-2">
+                      <img src="{% static 'images/lib.png'%}"class="logo">
+                    </div>
+                    <div class="col-sm-5 py-1">
+                        <div class="h3"><b class="text-primary">Polytechnic</b> <b class="text-success">Books</b> <b class="text-danger">Library</b></div>
+                    </div>
+                   <div class="col-sm-3 text-center py-2 fs-5">
+                    <a href="#"><i class="fa fa-facebook ic"></i></a>
+                    <a href="#"><i class="fa fa-youtube-play ic" style="color:#f70000"></i></a>
+                    <a href="#"><i class="fa fa-twitter-square ic" style="color:#1bb1e4"></i></a>
+                    <a href="#"><i class="fa fa-whatsapp ic" style="color:#37bf59"></i></a>
+                    <a href="#"><i class="fa fa-instagram ic" style="color:#d78b3e"></i></a>
+                   </div>
+                   <div class="col-sm-1"></div>
+                </div>
+            </div>
+        </div>
+        <!--header end-->
+        <!---menu start here-->
+        <div class="row sticky-top">
+            <div class="col-sm-12">
+                <div class="row menu bg-warning">
+                    <div class="col-sm-1"></div>
+                    <div class="col-sm-10">
+                        <nav class="navbar navbar-expand-lg navbar-light" id="menu">
+                            <div class="container-fluid">
+                              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                                <span class="navbar-toggler-icon"></span>
+                              </button>
+                              <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                                  <li class="nav-item">
+                                    <a class="nav-link active" aria-current="page" href="/library/home/">Home</a>
+                                  </li>
+                                
+                                  <li class="nav-item dropdown" >
+                                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                      Library
+                                    </a>
+                                    <ul class="dropdown-menu bg-warning" aria-labelledby="navbarDropdown">
+                                      <li><a class="dropdown-item" href="/library/cs/">Computer Science</a></li>
+                                      <li><a class="dropdown-item" href="/library/ma/"> mechanical Automobile</a></li>
+                                      <li><a class="dropdown-item" href="/library/mp/"> mechanical Production</a></li>
+                                      <li><a class="dropdown-item" href="/library/ee/">Electronics Engineering</a></li>
+                                      <li><a class="dropdown-item" href="/library/magazines/">Magazines</a></li>
+                                    </ul>
+                                  </li>
+
+                                  <li class="nav-item dropdown" >
+                                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                      Question paper
+                                    </a>
+                                    <ul class="dropdown-menu bg-warning" aria-labelledby="navbarDropdown">
+                                      <li><a class="dropdown-item" href="/library/cspaper/">Computer Science</a></li>
+                                      <li><a class="dropdown-item" href="/library/mapaper/"> mechanical Automobile</a></li>
+                                      <li><a class="dropdown-item" href="/library/mppaper/"> mechanical Production</a></li>
+                                      <li><a class="dropdown-item" href="/library/eepaper/">Electronics Engineering</a></li>
+                                    </ul>
+                                  </li>
+
+                                  <li class="nav-item">
+                                    <a class="nav-link active" aria-current="page" href="/library/contact/">Contact us</a>
+                                  </li>
+                                  <li class="nav-item">
+                                    <a class="nav-link active" aria-current="page" href="/library/about/">About us</a>
+                                  </li>
+                                  <li class="nav-item">
+                                    <a class="nav-link active" aria-current="page" href="/library/magazines/">Magazines</a>
+                                  </li>
+                                  <li class="nav-item">
+                                    <a class="nav-link active" aria-current="page" href="#">Gallery</a>
+                                  </li>
+                                </ul>
+                                <form class="d-flex" aria-required="true" action="/library/search/" method="get">
+                                  <input class="form-control me-2" name="sname" id="sname" required type="search" placeholder="Search Books or Magazines" aria-label="Search">
+                                  <button class="btn btn-outline-success" type="submit">Search</button>
+                                </form>
+                              </div>
+                            </div>
+                          </nav>
+                    </div>
+                    <div class="col-sm-1"></div>
+                </div>
+            </div>
+        </div>
+        <!--menu end-->
+
+       <div class="row Content">
+           <div class="col-sm-12 py-2">
+               {% block content %}
+               {% endblock %}
+           </div>
+       </div>
+
+        <!--Footer Start -->
+        <div class="row ufooter">
+          <!-- Footer -->
+          <footer class="text-center text-lg-start bg-dark text-light">
+              <!-- Section: Social media -->
+              <section
+                      class="d-flex justify-content-center justify-content-lg-between p-4 border-bottom"
+              >
+                  <!-- Left -->
+                  <div class="me-5 d-none d-lg-block">
+                      <span>Get connected with us on social networks:</span>
+                  </div>
+                  <!-- Left -->
+  
+                  <!-- Right -->
+                  <div>
+                      <a href="" class="me-4 text-reset">
+                          <i class="fa fa-facebook-f"></i>
+                      </a>
+                      <a href="" class="me-4 text-reset">
+                          <i class="fa fa-twitter"></i>
+                      </a>
+                      <a href="" class="me-4 text-reset ">
+                          <i class="fa fa-google"></i>
+                      </a>
+                      <a href="" class="me-4 text-reset">
+                          <i class="fa fa-instagram"></i>
+                      </a>
+                      <a href="" class="me-4 text-reset">
+                          <i class="fa fa-linkedin"></i>
+                      </a>
+                      <a href="" class="me-4 text-reset">
+                          <i class="fa fa-whatsapp"></i>
+                      </a>
+                  </div>
+                  <!-- Right -->
+              </section>
+              <!-- Section: Social media -->
+  
+              <!-- Section: Links  -->
+              <section class="">
+                  <div class="container text-center text-md-start mt-5">
+                      <!-- Grid row -->
+                      <div class="row mt-3">
+                          <!-- Grid column -->
+                          <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+                              <!-- Content -->
+                              <h6 class="text-uppercase fw-bold mb-4">
+                                  <i class="fa fa-gem me-3"></i>Thanks for visit..
+                              </h6>
+                              <p>
+                                  Get Free, your Favorite Books. <br>
+                                  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &copy; 2022
+                              </p>
+                          </div>
+                          <!-- Grid column -->
+  
+                          <!-- Grid column -->
+                          <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+                              <!-- Links -->
+                              <h6 class="text-uppercase fw-bold mb-4">
+                                  Branches
+                              </h6>
+                              <p>
+                                  <a href="#" class="text-reset">Computer Science</a>
+                              </p>
+                              <p>
+                                  <a href="#" class="text-reset">Mechanical Production</a>
+                              </p>
+                              <p>
+                                  <a href="#" class="text-reset">Electronics Engineering</a>
+                              </p>
+                              <p>
+                                  <a href="#" class="text-reset">Mechanical Automobile</a>
+                              </p>
+                          </div>
+                          <!-- Grid column -->
+  
+                          <!-- Grid column -->
+                          <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
+                              <!-- Links -->
+                              <h6 class="text-uppercase fw-bold mb-4">
+                                  Useful links
+                              </h6>
+                              <p>
+                                  <a href="#!" class="text-reset">Contact us</a>
+                              </p>
+                              <p>
+                                  <a href="#!" class="text-reset">About us</a>
+                              </p>
+                              <p>
+                                  <a href="#!" class="text-reset">Gallery</a>
+                              </p>
+                              <p>
+                                  <a href="#!" class="text-reset">Library</a>
+                              </p>
+                          </div>
+                          <!-- Grid column -->
+  
+                          <!-- Grid column -->
+                          <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+                              <!-- Links -->
+                              <h6 class="text-uppercase fw-bold mb-4">
+                                  Contact
+                              </h6>
+                              <p><i class="fa fa-home me-1"></i> Renukoot Utter Pradesh 231221.</p>
+                              <p>
+                                  <i class="fa fa-envelope me-1"></i>
+                                  <a href="mailto:premv0013@gmail.com" style="color: white;text-decoration: none;">premv0013@gmail.com</a>
+                              </p>
+                              <p><i class="fa fa-phone me-1"></i> +917007436861</p>
+                              <p><i class="fa fa-print me-1"></i> +918795932127</p>
+                          </div>
+                          <!-- Grid column -->
+                      </div>
+                      <!-- Grid row -->
+                  </div>
+              </section>
+              <!-- Section: Links  -->
+          </footer>
+          <!-- Footer -->
+      </div>
+      <div class="row bfooter text-light text-center py-2">
+          <div class="col-sm-6">Devoloped By || <span class="text-danger"> abhishek kumar sharma(abhi) Prem sagar Vishwakarma (Prem)</span></div>
+          <div class="col-sm-6">|| &copy; Our Library ||</div>
+      </div>
+        <!--end footer-->
+    </div>
+</body>
+</html>

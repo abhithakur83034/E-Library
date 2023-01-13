@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="row mag py-4">
+    <div class="h2 text-center text-danger">Magazines</div>
+    <div class="col-sm-10">
+        <div class="row">
+            <div class="col-sm-1"></div>
+           {% if maga %}
+           {% for x in maga %}
+
+            <div class="col-sm-3"><br>
+                <div class="card">
+                    <img src="/{{x.mpic}}" class="card-img-top">
+                    <div class="card-body">
+                      <h5 class="card-title">{{x.name}}</h5>
+                      <p class="card-text">{{x.mdate}}</p>
+                      <a href="{{x.mfile.url}}" download class="btn btn-primary">Download</a>
+                    </div>
+                  </div>
+            </div>
+
+            
+            <div class="col-sm-1"></div>
+            {% endfor %}
+            {% endif %}
+        </div>
+    </div>
+
+</div>
+{% endblock %}

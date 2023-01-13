@@ -1,0 +1,90 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<style>
+    .p{
+        font-family: Segoe UI;
+        text-align: justify;
+    }
+</style>
+<div class="row py-2">
+    <div class="h2  pb-4 text-center">About <b class="text-primary">Our</b> <b class="text-danger" >Library</b> <i class="fa fa-address-card text-success"></i></div>
+    <div class="col-sm-1"></div> 
+    <div class="col-sm-10">
+        <div class="row">
+            <div class="col-sm-6">
+                <img src="{% static 'images/lib1.jfif' %}" height="100%" width="100%">
+            </div>
+            <div class="col-sm-6">
+                <div class="h3 text-center"><b class="text-success">About</b> <b class="text-primary">The</b> <b class="text-danger">Library</b></div>
+                <hr>
+                <p class="fw-2 fs-5 p">In a time of continuing change in higher
+                    education, technology, research and scholarly communication,
+                    the Library has to be nimble and responsive to the 
+                    University's strategic directions. The Library is committed
+                    to develop students' critical thinking, problem-solving and
+                    research skills that will increase their employability, as
+                    well as graduates' life-long learning.</p><br>
+                <a href="/library/contact/" class="btn btn-outline-success">ContactUs</a>
+                <a href="#Features" class="btn btn-outline-danger">Learn More..</a>
+            </div>
+
+        </div>
+    </div>
+    <div class="col-sm-1"></div>
+
+</div>
+
+<div class="row">
+    <div class="h2 py-4 text-center" id="Features">Our <b class="text-success">Features</b></div>
+    <div class="col-sm-1"></div>
+    <div class="col-sm-10">
+        <div class="h3">Mission and <b class="text-success">Vision</b></div>
+        <hr width="100px" style="color: green;">
+        <p class="fw-2 fs-5 p" style="font-family:Segoe UI">As new technologies, disciplines
+             and opportunities for discovery continue to emerge, the learning and research
+              needs of ASU students and faculty demand a library that is both agile and 
+              robust, community-centered and service-minded, imaginative and engaged, 
+              and equipped to support a growing and dynamic university that is driven 
+              by innovation.</p>
+            
+        <div class="h3">Easy To <b class="text-success">Download</b></div>
+        <hr width="100px" style="color: green;">
+        <p class="fw-2 fs-5 p" style="font-family:Segoe UI">There are many variations of passages of Lorem Ipsum available, 
+            but the majority but the majority but the majority but the majority 
+            have suffered alteration in some form, by injected humour, 
+            or randomised words which don't look even slightly believable.</p>
+
+        <div class="h3">Easy To <b class="text-success">Learn</b></div>
+        <hr width="100px" style="color: green;">
+        <p class="fw-2 fs-5 p" style="font-family:Segoe UI">There are many variations of passages of Lorem Ipsum available, 
+            but the majority but the majority but the majority but the majority 
+            have suffered alteration in some form, by injected humour, 
+            or randomised words which don't look even slightly believable.</p>
+
+        <div class="h3">News</div>
+        <hr width="100px" style="color: green;">
+        <p class="fw-2 fs-5 p" style="font-family:Segoe UI">There are many variations of passages of Lorem Ipsum available, 
+            but the majority but the majority but the majority but the majority 
+            have suffered alteration in some form, by injected humour, 
+            or randomised words which don't look even slightly believable.</p>
+
+            <div class="h3">Free <b class="text-success"> For All</b></div>
+        <hr width="100px" style="color: green;">
+        <p class="fw-2 fs-5 p" style="font-family:Segoe UI">There are many variations of passages of Lorem Ipsum available, 
+            but the majority but the majority but the majority but the majority 
+            have suffered alteration in some form, by injected humour, 
+            or randomised words which don't look even slightly believable.</p>
+        
+            <div class="h3">Terms of <b class="text-success"> use</b></div>
+        <hr width="100px" style="color: green;">
+        <p class="fw-2 fs-5 p" style="font-family:Segoe UI">There are many variations of passages of Lorem Ipsum available, 
+            but the majority but the majority but the majority but the majority 
+            have suffered alteration in some form, by injected humour, 
+            or randomised words which don't look even slightly believable.</p>
+        
+    </div>
+    <div class="col-sm-1"></div>
+</div>
+{% endblock %}

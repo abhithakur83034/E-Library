@@ -1,0 +1,190 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<style>
+  .gallery{
+    min-height: 600px;
+    background: #E3F2FD;
+  }
+  .g_inner{
+    min-height: 500px;
+    
+  }
+  .c{
+    min-height: 250px;
+    border: 2px solid #ff3848;
+    background: rgb(255, 255, 255,.6);
+    transform-style: preserve-3d;
+    transform: rotateY(20deg);
+    box-shadow: 0px 0px 10px 2px black inset;
+    border-radius: 5px;
+    padding: 15px;
+  }
+  .c img{
+      height: 100%;
+      width: 100%;
+  }
+  .c img:hover{
+      filter: grayscale(100%);
+      transition: all ease 1s;
+      transform: perspective(700px) rotateX(360deg);
+                
+  }
+  .branch{
+    background: #F5F5F5;
+  }
+  .books{
+    background: #F5F5F5;
+  }
+</style>
+ <!--Slider Start-->
+ <div class="row slide mt-2">
+  <div class="col-sm-12">
+    <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img src="{% static 'images/slide.jpeg '%}" class="d-block w-100" style="max-height: 450px;" alt="...">
+        </div>
+        <!--<div class="carousel-item">
+          <img src="..." class="d-block w-100" alt="...">
+        </div>
+        <div class="carousel-item">
+          <img src="..." class="d-block w-100" alt="...">
+        </div>-->
+      </div>
+    </div>
+    <!--<p id="p">Welcome To Libarary <br>
+      Get Your Favorite Books Here !</p>-->
+  </div>
+</div>
+<!--Slider End-->
+
+<!--Branch start-->
+<div class="row branch py-4">
+  <div class="col-sm-12">
+    <div class="row">
+      <div class="col-sm-1"></div>
+
+      <div class="col-sm-2 b">
+        <div class="card">
+          <img src="{% static 'images/cs.jpg' %}" class="card-img-top">
+          <div class="card-body">
+            <h5 class="card-title">Computer</br> Science</h5>
+            <p class="card-text">Get Your Favorite Books Here!</p>
+            <a href="#" class="btn btn-outline-warning text-dark" >Go to Library</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-sm-2 b">
+        <div class="card">
+          <img src="{% static 'images/ee.jpg' %}" class="card-img-top">
+          <div class="card-body">
+            <h5 class="card-title">Electronics Engineering</h5>
+            <p class="card-text">Get Your Favorite Books Here!</p>
+            <a href="#" class="btn btn-outline-warning text-dark" >Go to Library</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-sm-2 b">
+        <div class="card">
+          <img src="{% static 'images/ma.jpg' %}" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">Mechanical Automobile</h5>
+            <p class="card-text">Get Your Favorite Books Here!</p>
+            <a href="#" class="btn btn-outline-warning text-dark" >Go to Library</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-sm-2 b">
+        <div class="card">
+          <img src="{% static 'images/mp.jpg' %}" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">Mechanical Production</h5>
+            <p class="card-text">Get Your Favorite Books Here!</p>
+            <a href="#" class="btn btn-outline-warning text-dark" >Go to Library</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-sm-2 b">
+        <div class="card">
+          <img src="{% static 'images/mag.png' %}" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">Magazines</h5><br>
+            <p class="card-text">Get Your Favorite Magazines Here!</p>
+            <a href="#" class="btn btn-outline-warning text-dark" >Go to Magazines</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-sm-1"></div>
+    </div>
+  </div>
+</div>
+<!--Branch end-->
+
+<!--Books start-->
+<div class="row books">
+  <div class="col-sm-1"></div>
+  <div class="col-sm-10">
+    <div class="row">
+  
+      {% if f %}
+      {% for x in f %}
+
+      <div class="col-sm-2">
+        <div class="card">
+          <img src="/{{x.ppic}}" class="card-img-top"><br>
+          <div class="card-body">
+            <h5 class="card-title">{{x.name}}</h5>
+            <h6 class="card-text">{{x.branch}}</h6>
+            <h6 class="card-text">{{x.lan}}</h6>
+            <h6 class="card-text">{{x.pdate}} </h6>
+            <a href="{{x.pfile.url}}" download class="btn btn-outline-warning text-dark" >Download</a>
+          </div>
+        </div>
+      </div>
+
+  
+  {% endfor %}
+  {% endif %}
+</div>
+</div>
+  <div class="col-sm-1"></div>
+</div>
+<!--Books End-->
+
+<!--Gallery-->
+<div class="row gallery text-center mt-5">
+  <div class="col-sm-12">
+    <div class="row g_inner m-5">
+      <h1 class="text-primary">IMAGES <b class="text-success">GALLERY</b></h1>
+      <div class="col-sm-12">
+      <div class="row p-2">
+
+        {% if g %}
+        {% for x in g %}
+  
+
+        <div class="col-sm-3 c m-5">
+          <img src="/{{x.img}}">
+        </div>
+       
+        {% endfor %}
+        {% endif %}
+  
+      </div>
+
+     
+    </div>
+
+    </div>
+  </div>
+</div>
+<!--Gallery End-->
+
+{% endblock %}

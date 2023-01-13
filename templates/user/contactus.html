@@ -1,0 +1,58 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<style>
+    .contact{
+        min-height: 400px;
+        background: #E1F5FE;
+    }
+    .client{
+        
+        background: linear-gradient(#0b57c0 10%,#00ceef);
+        box-shadow: 10px -5px 20px rgb(0, 0, 0,.2);
+        border-radius: 5px;
+    }
+    .client input{
+                border: 1px solid #00b0e7;
+                background: transparent;
+                border-radius: 3px;
+                outline: none;
+                color: white;
+                font-size: 14px;
+                font-family: Calibri;
+            }
+
+              
+</style>
+<div class="row contact py-4">
+    <div class="h2 text-center">Contact <b class="text-success">Us <i class="fa fa-phone"></i></b></div>
+    <div class="col-sm-1"></div>
+    <div class="col-sm-10">
+        <div class="row">
+            <div class="col-sm-5 client p-4 mt-5 text-light">
+                <form method="post">
+                    {% csrf_token %}
+                    {% if S %}
+                    <div class="alert alert-success">
+                        Thanks for Enquiry...
+                    </div>
+                    {% endif %}
+                    Name <b class="text-danger">*</b> <input type="text" name="cname" required class="form-control a" placeholder="Enter Your name...">
+                    Mobile No. <b class="text-danger">*</b> <input type="number" name="cnumber" required class="form-control a" placeholder="Enter Your contact no...">
+                    Email <b class="text-danger">*</b>  <input type="email" name="cemail" required class="form-control a" placeholder="Enter Your Email...">
+                    Message <b class="text-danger">*</b>  <textarea  style="border: 1px solid #57d8ff; background: transparent;  border-radius: 3px;
+                    outline: none; color: white; font-size: 14px; resize: none;" name="cmsg" class="form-control a" required placeholder="Enter Your Message here.."></textarea><br>
+                    <input type="submit" value="Send message" class="btn btn-outline-primary">
+                </form>
+            </div>
+            <div class="col-sm-7  mt-5">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3638.6726189534666!2d83.03241861499028!3d24.218242884360887!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x398edba317283631%3A0x7a27884916f86059!2srenukoot!5e0!3m2!1sen!2sin!4v1646370504282!5m2!1sen!2sin" 
+                width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-1"></div>
+
+</div>
+{% endblock %}
